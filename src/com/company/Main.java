@@ -20,10 +20,10 @@ public class Main {
                 {20,1,2,1,2,1,2,1,2},};
 
 
-        // 0 
-        // 1
-        // 2
-        // 3
+        // 0 bílý kámem
+        // 1 černý kámen
+        // 2 bílé pole
+        // 3 černé pole
 
 
         boolean tah = true;
@@ -49,13 +49,37 @@ public class Main {
                 System.out.println("Zadej X pro posunutí kamene");
                 SouPX = sc.nextInt();
 
-                Blackrules.Jenompocernych(pole, SouPY, SouPX);
+                Jenompocernych.jenompocernych(pole, SouPY, SouPX);
 
-                Tahaniscernymi.Tahanicernych(pole, SouVY, SouVX);
+                Tahaniscernymi.tahanirule1(pole, SouVY, SouVX);
 
                 Posunovanicernyho.posunovani1(pole, SouVY, SouVX, SouPY, SouPX, tah);
 
                 Vyhazovanicerni.vyhozeni1 (pole, SouVY, SouVX, SouPY, SouPX, white, tah);
+
+
+            }
+            if (tah == false ){    // HRAJE ČERNEJ 1.
+                Vypisovanifunkce.vypisonvani(pole);
+
+                System.out.println("Teď je na tahu černej");
+                System.out.println("Zadej Y pro vybrání kamene");
+                SouVY = sc.nextInt();
+                System.out.println("Zadej X pro vybrání kamene");
+                SouVX = sc.nextInt();
+
+                System.out.println("Zadej Y pro posunutí kamene");
+                SouPY = sc.nextInt();
+                System.out.println("Zadej X pro posunutí kamene");
+                SouPX = sc.nextInt();
+
+                Jenompocernych.jenompocernych(pole, SouPY, SouPX);
+
+                Tahanibilymi.tahanirule2(pole, SouVY, SouVX);
+
+                Posunovanibilyho.posunovani2(pole, SouVY, SouVX, SouPY, SouPX, tah);
+
+                Vyhazovanibily.vyhozeni2 (pole, SouVY, SouVX, SouPY, SouPX, white, tah);
 
 
             }

@@ -3,13 +3,13 @@ package com.company;
 // 1 černý kámen
 // 2 bílé pole
 // 3 černé pole
-public class Posunovanicernyho {
-    public static void posunovani1 (int[][] pole, int SouVY, int SouVX, int SouPY, int SouPX, boolean tah){
+public class Posunovanibilyho {
+    public static void posunovani2 (int[][] pole, int SouVY, int SouVX, int SouPY, int SouPX, boolean tah){
         if (pole[SouPY][SouPX] == 3){
-            pole[SouPY][SouPX] = 1;
+            pole[SouPY][SouPX] = 0;
             pole[SouVY][SouVX] = 3;
             Vypisovanifunkce.vypisonvani(pole);
-            tah = false;
+            tah = true;
         }
     }
 }

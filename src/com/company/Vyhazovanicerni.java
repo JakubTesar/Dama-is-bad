@@ -1,5 +1,8 @@
 package com.company;
-
+// 0 bílý kámem
+// 1 černý kámen
+// 2 bílé pole
+// 3 černé pole
 public class Vyhazovanicerni {
     public static void vyhozeni1 (int[][] pole, int SouVY, int SouVX, int SouPY, int SouPX, int white, boolean tah){
 
