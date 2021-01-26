@@ -8,7 +8,6 @@ public class Posunovanicernyho {
         if (pole[SouPY][SouPX] == 3){
             pole[SouPY][SouPX] = 1;
             pole[SouVY][SouVX] = 3;
-            Vypisovanifunkce.vypisonvani(pole);
             tah = false;
         }
     }

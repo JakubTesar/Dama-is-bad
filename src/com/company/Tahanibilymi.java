@@ -5,8 +5,8 @@ package com.company;
 // 3 černé pole
 public class Tahanibilymi {
     public static void tahanirule2 (int pole[][], int SouVY, int SouVX){
-        if (pole[SouVY][SouVX] == 0) {
-            System.out.println("Špatné pole (Můžeš táhnout jenom s černými)");
+        if (pole[SouVY][SouVX] == 1) {
+            System.out.println("Špatné pole (Můžeš táhnout jenom s Bílými)");
             Vypisovanifunkce.vypisonvani(pole);
         }
     }

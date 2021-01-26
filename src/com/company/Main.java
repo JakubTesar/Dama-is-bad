@@ -18,20 +18,15 @@ public class Main {
                 {18,1,2,1,2,1,2,1,2},
                 {19,2,1,2,1,2,1,2,1},
                 {20,1,2,1,2,1,2,1,2},};
-
-
         // 0 bílý kámem
         // 1 černý kámen
         // 2 bílé pole
         // 3 černé pole
-
-
         boolean tah = true;
         int  SouVY;
         int  SouVX;
         int  SouPY;
         int  SouPX;
-
 
         while (white !=0 || black !=0){
 
@@ -48,21 +43,28 @@ public class Main {
                 SouPY = sc.nextInt();
                 System.out.println("Zadej X pro posunutí kamene");
                 SouPX = sc.nextInt();
+                try{
+                    Jenompocernych.jenompocernych(pole, SouPY, SouPX);  // Jenom po černém poly
 
-                Jenompocernych.jenompocernych(pole, SouPY, SouPX);
+                    Tahaniscernymi.tahanirule1(pole, SouVY, SouVX);// Tahani jenom s vlastní barvou
 
-                Tahaniscernymi.tahanirule1(pole, SouVY, SouVX);
+                    Posunovanicernyho.posunovani1(pole, SouVY, SouVX, SouPY, SouPX, tah);// Posunovaní obyčejné
 
-                Posunovanicernyho.posunovani1(pole, SouVY, SouVX, SouPY, SouPX, tah);
+                    Vyhazovanicerni.vyhozeni1 (pole, SouVY, SouVX, SouPY, SouPX, white, tah);// Vyhození
 
-                Vyhazovanicerni.vyhozeni1 (pole, SouVY, SouVX, SouPY, SouPX, white, tah);
+                } catch (Exception e) {
+                    System.out.println("----------------------");
+                    System.out.println("Retart Alert!!!");
+                    System.out.println("Takto táhnout nemůžeš");
+                    System.out.println("Retart Alert!!!");
+                    System.out.println("----------------------");
 
-
+                }
             }
             if (tah == false ){    // HRAJE ČERNEJ 1.
                 Vypisovanifunkce.vypisonvani(pole);
 
-                System.out.println("Teď je na tahu černej");
+                System.out.println("Teď je na tahu Bílej");
                 System.out.println("Zadej Y pro vybrání kamene");
                 SouVY = sc.nextInt();
                 System.out.println("Zadej X pro vybrání kamene");
@@ -73,15 +75,21 @@ public class Main {
                 System.out.println("Zadej X pro posunutí kamene");
                 SouPX = sc.nextInt();
 
-                Jenompocernych.jenompocernych(pole, SouPY, SouPX);
+                try{
+                    Jenompocernych.jenompocernych(pole, SouPY, SouPX); // Jenom po černém poly
 
-                Tahanibilymi.tahanirule2(pole, SouVY, SouVX);
+                    Tahanibilymi.tahanirule2(pole, SouVY, SouVX);  // Tahani jenom s vlastní barvou
 
-                Posunovanibilyho.posunovani2(pole, SouVY, SouVX, SouPY, SouPX, tah);
+                    Posunovanibilyho.posunovani2(pole, SouVY, SouVX, SouPY, SouPX, tah); // Posunovaní obyčejné
 
-                Vyhazovanibily.vyhozeni2 (pole, SouVY, SouVX, SouPY, SouPX, white, tah);
-
-
+                    Vyhazovanibily.vyhozeni2 (pole, SouVY, SouVX, SouPY, SouPX, white, tah); // Vyhození
+                } catch (Exception e){
+                    System.out.println("----------------------");
+                    System.out.println("Retart Alert!!!");
+                    System.out.println("Takto táhnout nemůžeš");
+                    System.out.println("Retart Alert!!!");
+                    System.out.println("----------------------");
+                }
             }
 
         }
