@@ -39,14 +39,25 @@ public class Main {
                 System.out.println("Zadej X pro vybrání kamene");
                 SouVX = sc.nextInt();
 
+                try{
+                    Tahaniscernymi.tahanirule1(pole, SouVY, SouVX);// Tahani jenom s vlastní barvou
+
+                    Vybranicernyho.vybranicernyho(pole, SouVY, SouVX); // Nemůžeš vybrat pole
+                } catch (Exception e) {
+                    System.out.println("----------------------");
+                    System.out.println("Retart Alert!!!");
+                    System.out.println("Takto táhnout nemůžeš");
+                    System.out.println("Retart Alert!!!");
+                    System.out.println("----------------------");
+
+                }
+
                 System.out.println("Zadej Y pro posunutí kamene");
                 SouPY = sc.nextInt();
                 System.out.println("Zadej X pro posunutí kamene");
                 SouPX = sc.nextInt();
                 try{
                     Jenompocernych.jenompocernych(pole, SouPY, SouPX);  // Jenom po černém poly
-
-                    Tahaniscernymi.tahanirule1(pole, SouVY, SouVX);// Tahani jenom s vlastní barvou
 
                     Posunovanicernyho.posunovani1(pole, SouVY, SouVX, SouPY, SouPX, tah);// Posunovaní obyčejné
 
@@ -58,10 +69,10 @@ public class Main {
                     System.out.println("Takto táhnout nemůžeš");
                     System.out.println("Retart Alert!!!");
                     System.out.println("----------------------");
-
                 }
             }
-            if (tah == false ){    // HRAJE ČERNEJ 1.
+            
+            if (tah == false ){    // HRAJE Bílej 1.
                 Vypisovanifunkce.vypisonvani(pole);
 
                 System.out.println("Teď je na tahu Bílej");
@@ -83,6 +94,7 @@ public class Main {
                     Posunovanibilyho.posunovani2(pole, SouVY, SouVX, SouPY, SouPX, tah); // Posunovaní obyčejné
 
                     Vyhazovanibily.vyhozeni2 (pole, SouVY, SouVX, SouPY, SouPX, white, tah); // Vyhození
+
                 } catch (Exception e){
                     System.out.println("----------------------");
                     System.out.println("Retart Alert!!!");
