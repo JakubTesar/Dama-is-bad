@@ -1,16 +1,21 @@
 package com.company;
-// 0 bílý kámem
+
+public class Posunovanicernyho {
+    // 0 bílý kámem
 // 1 černý kámen
 // 2 bílé pole
 // 3 černé pole
-public class Posunovanicernyho {
-    public static void posunovani1 (int[][] pole, int SouVY, int SouVX, int SouPY, int SouPX, boolean tah){
-        if (pole[SouVY][SouVX] == 1) {
-            if (pole[SouPY][SouPX] == 3) {
+    public static boolean posunovani1(int[][] pole, int SouVY, int SouVX, int SouPY, int SouPX, boolean tah) {
+        boolean output = false;
+
+        if (pole[SouPY][SouPX] == 3) {
+            if (SouPY + 1 == SouVY && Math.abs(SouPX - SouVX) == 1) {
                 pole[SouPY][SouPX] = 1;
                 pole[SouVY][SouVX] = 3;
-                tah = false;
+                output = true;
             }
         }
+        return output;
     }
 }
+

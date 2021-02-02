@@ -6,16 +6,16 @@ public class Vypisovanifunkce {
         for (int i = 0; i < pole.length; i++) {
             for (int j = 0; j < pole.length; j++) {
                 if (pole[i][j] == 0){
-                    System.out.print("⚫.");
+                    System.out.print("⚫ ");
                 }
                 if (pole[i][j] == 1){
-                    System.out.print("⚪.");
+                    System.out.print("⚪ ");
                 }
                 if (pole[i][j] == 2){
-                    System.out.print("⬛.");
+                    System.out.print("⬛ ");
                 }
                 if (pole[i][j] == 3){
-                    System.out.print("⬜.");
+                    System.out.print("⬜ ");
                 }
                 if (pole[i][j] == 4){
                     System.out.print("0️⃣");
@@ -67,6 +67,12 @@ public class Vypisovanifunkce {
                 }
                 if (pole[i][j] == 20){
                     System.out.print("8️⃣");
+                }
+                if (pole[i][j] == 21){
+                    System.out.print("\uD83D\uDC69");
+                }
+                if (pole[i][j] == 22){
+                    System.out.print("\uD83D\uDC69\uD83C\uDFFF");
                 }
             }
             System.out.println();
