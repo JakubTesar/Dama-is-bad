@@ -9,20 +9,23 @@ public class Vyhazovanicerni {
 
         if (pole[SouPY][SouPX] == 0) {
 
-            if (pole[SouPY + 1][SouPX - 1] == 3) {
-                pole[SouPY + 1][SouPX - 1] = 1;
-                pole[SouVY][SouVX] = 3;
-                pole[SouPY][SouPX] = 3;
-                white -= 1;
-                Vypisovanifunkce.vypisonvani(pole);
+            if (SouPX < SouVX) {
+                if (pole[SouPY - 1][SouPX - 1] == 3) {
+                    pole[SouPY - 1][SouPX - 1] = 1;
+                    pole[SouVY][SouVX] = 3;
+                    pole[SouPY][SouPX] = 3;
+                    white -= 1;
+                }
 
-            } else if (pole[SouPY + 1][SouPX + 1] == 3) {
-                pole[SouPY + 1][SouPX + 1] = 1;
-                pole[SouPY][SouPX] = 3;
-                pole[SouVY][SouVX] = 3;
-                white -= 1;
-                Vypisovanifunkce.vypisonvani(pole);
+            }
 
+            if (SouPX > SouVX) {
+                if (pole[SouPY - 1][SouPX + 1] == 3) {
+                    pole[SouPY - 1][SouPX + 1] = 1;
+                    pole[SouPY][SouPX] = 3;
+                    pole[SouVY][SouVX] = 3;
+                    white -= 1;
+                }
             }
         }
         return white;

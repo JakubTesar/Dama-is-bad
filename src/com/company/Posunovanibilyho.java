@@ -22,7 +22,6 @@ public class Posunovanibilyho {
                 }
             }
 
-
             if (pole[SouVY][SouVX] == pole[SouPY - 1][SouPX - 1]) {
                 if (pole[SouPY][SouPX] == 3) {
                     pole[SouPY][SouPX] = 0;
